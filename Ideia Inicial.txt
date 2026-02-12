@@ -1,0 +1,31 @@
+RELATÓRIO DO DIA
+1. Descrição Geral do Sistema
+O sistema utiliza um LED para representar uma lâmpada, acionado por um relé que atua como temporizador. Este relé controla os intervalos de ativação e desativação da carga. O comando de controle é enviado diretamente pelo ESP32, que define o tempo exato em que a lâmpada deve permanecer ligada ou desligada.
+
+2. Ferramentas que Serão Usadas
+
+2.1 Simulação e Programação
+Será utilizado o Wokwi para simulação e validação inicial do circuito. O microcontrolador será programado em C++, responsável por realizar a leitura dos dados e enviá-los para a API via requisições HTTP.
+
+2.2 Desenvolvimento da API e Persistência
+A API será desenvolvida em Python utilizando FastAPI. Para persistência, será utilizado o MongoDB, pela facilidade de integração com aplicações em Python e por trabalhar bem com documentos no formato JSON. Dentre outros benefícios.
+Também temos o planejamento de integrar uma API de Text-To-Speech (TTS), utilizando serviços de uma empresa especializada nisso como a ElevenLabs ou então alguma gigante tecnológica que oferece mais serviços além de TTS como a Amazon, Google ou OpenAI.
+
+2.3 Formato de Dados (JSON)
+{
+  "endereco": "string",
+  "corrente": "watts",
+  "id": "1",
+  "data": "2026/02/10"
+}
+
+Armazenará a identificação do dispositivo, o valor de corrente medido em watts e a data no formato timestamp (ISO 8061) YYYY-MM-DDTHH:mm:ss.sssZ, e no futuro, quando começarmos uma dashboard/web interface, formatarmos para DD/MM/YYYY
+
+2.4 Banco de Dados de Persistência
+O MongoDB foi escolhido por ser um banco NoSQL, fácil de armazenar dados em formato JSON. Permite futuras alterações no modelo sem necessidade de grandes mudanças estruturais, além de que em algumas pesquisas ter sido se mostrado o mais viável por ser fácil de trabalhar com armazenamento de logs e dados de múltiplos dispositivos IoT.
+
+2.5 Tecnologia/Linguagem para API
+O FastAPI foi escolhido por sua alta performance, grande comunidade para pesquisas, e extremamente fácil de utilizar. Além disso, possui boa integração com serviços externos, como APIs de TTS, e mantém alinhamento com o uso de Python nas demais disciplinas do semestre.
+6. Plataforma de Prototipagem
+Usamos o Wokwi devido ao fato do nosso projeto fazer o uso da ESP32, e o TinkerCad tem disponível apenas modelos de microcontrolador Arduino.
+
