@@ -10,10 +10,10 @@ Sistema embarcado de monitoramento de consumo elétrico em tempo real, composto 
 
 ```
 ┌──────────────┐        HTTPS POST /dados        ┌──────────────┐       ┌──────────────────┐
-│   ESP32      │ ──────────────────────────────►  │  FastAPI      │ ────► │ Firebase Realtime │
-│  (Firmware)  │   JSON: id, consumo, evento,     │  (api.py)     │       │    Database       │
-│              │         status_rele              │               │       │                  │
-└──────────────┘                                  └──────────────┘       └──────────────────┘
+│   ESP32      │ ──────────────────────────────► │  FastAPI     │ ────► │ Firebase Realtime│
+│  (Firmware)  │   JSON: id, consumo, evento,    │  (api.py)    │       │    Database      │
+│              │         status_rele             │              │       │                  │
+└──────────────┘                                 └──────────────┘       └──────────────────┘
      │                                                   │
      │ Sensor ADC (pino 34)                              │ GET /dados
      │ Relé (pino 32)                                    ▼
